@@ -4,7 +4,6 @@
 .sails
 .waterline
 .rigging
-.tmp
 
 
 ########################
@@ -43,3 +42,11 @@ nbproject
 # local config
 ########################
 config/local.js
+
+########################
+# angular
+########################
+dist
+.tmp
+.sass-cache
+app/bower_components
