@@ -39,9 +39,11 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
+            /*
             gruntfile: {
                 files: ['Gruntfile.js']
             },
+            */
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
@@ -95,7 +97,7 @@ module.exports = function (grunt) {
                 reporter: require('jshint-stylish')
             },
             all: [
-                'Gruntfile.js',
+                //'Gruntfile.js',
                 '<%= yeoman.app %>/scripts/{,*/}*.js'
             ],
             test: {
