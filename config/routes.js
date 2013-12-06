@@ -28,6 +28,7 @@
 
 module.exports.routes = {
 
+  /*
   // By default, your root route (aka home page) points to a view
   // located at `views/home/index.ejs`
   // 
@@ -36,7 +37,6 @@ module.exports.routes = {
     view: 'home/index'
   }
 
-  /*
   // But what if you want your home page to display
   // a signup form located at `views/user/signup.ejs`?
   '/': {
