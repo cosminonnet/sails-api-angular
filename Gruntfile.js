@@ -20,9 +20,10 @@ module.exports = function (grunt) {
 
         // Project settings
         yeoman: {
-            // configurable paths
+            // Configurable paths
             app: require('./bower.json').appPath || 'app',
-            dist: 'assets'
+            // Sails public folder
+            dist: '.tmp/public'
         },
 
         // Watches files for changes and runs tasks based on the changed files
