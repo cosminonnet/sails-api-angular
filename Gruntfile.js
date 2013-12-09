@@ -74,7 +74,7 @@ module.exports = function (grunt) {
             },
             proxies: [
                 {
-                    context: '/user',
+                    context: '/api',
                     host: 'localhost',
                     port: 1337
                 }
