@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('sailsApiAngularApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
+  ])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -16,3 +16,8 @@ angular.module('sailsApiAngularApp', [
         redirectTo: '/'
       });
   }]);
+  /*
+  .factory('User', ['$resource', function($resource){
+    return $resource('/user/:id', {id:'@id'});
+  }]);
+  */
