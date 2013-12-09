@@ -46,6 +46,7 @@ config/local.js
 ########################
 # angular
 ########################
+assets/*
 .tmp
 .sass-cache
 app/bower_components
