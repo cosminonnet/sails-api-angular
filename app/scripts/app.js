@@ -16,8 +16,3 @@ angular.module('sailsApiAngularApp', [
         redirectTo: '/'
       });
   }]);
-  /*
-  .factory('User', ['$resource', function($resource){
-    return $resource('/user/:id', {id:'@id'});
-  }]);
-  */

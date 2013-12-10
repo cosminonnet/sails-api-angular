@@ -2,21 +2,33 @@
 
 describe('Controller: MainCtrl', function () {
 
-  // load the controller's module
+  // Load the controller's module
   beforeEach(module('sailsApiAngularApp'));
 
+  // Define the variables
   var MainCtrl,
-    scope;
+      scope,
+      httpBackend,
+      userData = [
+        { "name": "John", "id": 1 },
+        { "name": "Terry", "id": 2 }
+      ];
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _$httpBackend_) {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
     });
+
+    httpBackend = _$httpBackend_;
+    httpBackend.expectGET('/api/user').respond(userData);
   }));
 
+  // Tests descriptions
   it('should attach a list of users to the scope', function () {
-    expect(scope.users.length).toBe(2);
+    httpBackend.flush();
+    expect(scope.users.length).toBe(userData.length);
   });
+
 });
