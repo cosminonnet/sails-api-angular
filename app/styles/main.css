@@ -1,103 +1,109 @@
-/* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+    margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-/* Services */
-
-.services {
-    background: #7fbbda;
-    padding: 50px 0;
-    color: #ffffff;
-}
-
-.service-item {
-    margin-bottom: 15px;
-}
-
-i.service-icon {
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 56px;
-    width: 140px;
-    height: 140px;
-    line-height: 136px;
-    vertical-align: middle;
+.header-image {
+    background: url(/images/background.jpg);/* Use a tiling background image or a full width image - if you're using full width you will need to change no-repeat center center cover  */
+    background-position: top;
+    height: auto;
+    display: block;
+    width: 100%;
     text-align: center;
+}
+
+.headline {
+    padding: 60px 0;
+}
+
+.headline > .container > h1 {
+    font-size: 130px;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.headline > .container > h2 {
+    font-size: 77px;
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.featurette-divider {
+    margin: 40px 0;
+}
+.featurette {
+    overflow: hidden;
+}
+
+.featurette-image.pull-left {
+    margin-right: 40px;
+}
+.featurette-image.pull-right {
+    margin-left: 40px;
+}
+
+.featurette-heading {
+    font-size: 50px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+/* RESPONSIVE CSS */
+
+@media (max-width: 1200px) {
+
+    .headline > .container > h1 {font-size: 140px;}
+    .headline > .container > h2 {font-size: 63px;}
+    .featurette-divider {margin: 50px 0;}
+    .featurette-image.pull-left {margin-right: 20px;}
+    .featurette-image.pull-right {margin-left: 20px;}
+    .featurette-heading {font-size: 35px;}
+
+}
+
+@media (max-width: 991px) {
+
+    .headline > .container > h1 {font-size: 105px;}
+    .headline > .container > h2 {font-size: 50px;}
+    .featurette-divider {margin: 40px 0;}
+    .featurette-image {max-width: 50%;}
+    .featurette-image.pull-left {margin-right: 10px;}
+    .featurette-image.pull-right {margin-left: 10px;}
+    .featurette-heading {font-size: 30px;}
+
+}
+
+@media (max-width: 768px) {
+
+    .container {margin: 0 15px;}
+    .featurette-divider {margin: 40px 0;}
+    .featurette-heading {font-size: 25px;}
+
+}
+
+
+@media (max-width: 668px) {
+
+    .headline > .container > h1 {font-size: 70px;}
+    .headline > .container > h2 {font-size: 32px;}
+    .featurette-divider {margin: 30px 0;}
+
+}
+
+@media (max-width: 640px) {
+
+    .headline {padding: 75px 0 25px 0;}
+    .headline > .container > h1 {font-size: 60px;}
+    .headline > .container > h2 {font-size: 30px;}
+
+}
+
+@media (max-width: 375px) {
+
+    .featurette-divider {margin: 10px 0;}
+    .featurette-image {max-width: 100%;}
+    .featurette-image.pull-left {margin-right: 0; margin-bottom: 10px;}
+    .featurette-image.pull-right {margin-left: 0; margin-bottom: 10px;}
+
 }

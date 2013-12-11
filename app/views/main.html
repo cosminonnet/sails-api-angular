@@ -1,46 +1,78 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">sails api angular</h3>
-</div>
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-href="#">Home</a>
+        </div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li><a ng-href="#">About</a></li>
+                <li><a ng-href="#">Contact</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
 
-<div class="row marketing">
-  <ul>
-    <li ng-repeat="user in users">
-        <p>{{user.name}}</p>
-    </li>
-  </ul>
-</div>
+<div class="header-image">
 
-<ul class="nav nav-pills nav-stacked">
-    <li class="active">
-        <a href="#">
-            <span class="badge pull-right">42</span>
-            Home
-        </a>
-    </li>
-</ul>
+    <div class="headline">
+        <div class="container">
+            <h1>Modern web project</h1>
+            <h2>With Sails on backend and Angular on frontend</h2>
+        </div>
+    </div>
 
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Messages</a></li>
-</ul>
+</div><!-- /header-image -->
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+<div class="container">
 
-<p>&nbsp;</p>
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="featurette" id="about">
+        <img class="featurette-image img-circle img-responsive pull-right" src="/images/angularjs.png">
+        <h2 class="featurette-heading">Angular <span class="text-muted">is a framework for building enhanced web apps.</span></h2>
+        <p class="lead">Angular is built around the belief that declarative programming should be used for building UIs and wiring software components, while imperative programming is excellent for expressing business logic. The framework adapts and extends traditional HTML to better serve dynamic content through two-way data-binding that allows for the automatic synchronization of models and views. As a result, AngularJS deemphasizes DOM manipulation and improves testability.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette" id="services">
+        <img class="featurette-image img-circle img-responsive pull-left" src="/images/sails.png">
+        <h2 class="featurette-heading">Sails <span class="text-muted">make it easy to build custom enterprise-grade Node apps.</span></h2>
+        <p class="lead">It is designed to mimic the MVC pattern of frameworks like Ruby on Rails, but with support for the requirements of modern apps like data-driven APIs with scalable, service-oriented architecture.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette" id="contact">
+        <img class="featurette-image img-circle img-responsive pull-right" src="/images/mongo.png">
+        <h2 class="featurette-heading">Mongo <span class="text-muted">is the leading open-source NoSQL database.</span></h2>
+        <p class="lead">Mongo is a cross-platform document-oriented database system that eschews the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas, making the integration of data in certain types of applications easier and faster.</p>
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Copyright &copy; 2013</p>
+        <p ng-hide="users.length === 0">Contributors:</p>
+        <ul>
+            <li ng-repeat="user in users">
+                <p>{{user.name}}</p>
+            </li>
+        </ul>
+    </footer>
+    <!-- /END OF FOOTER -->
+
+</div><!-- /container -->
