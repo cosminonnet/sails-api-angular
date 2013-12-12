@@ -11,6 +11,15 @@
 
 <div class="container">
 
+    <div ng-show="users.length > 0">
+        <hr class="featurette-divider">
+
+        <b>Latest Users:</b>
+        <span ng-repeat="user in users">
+            {{user.name}}<span ng-if="$index < users.length - 1">,</span>
+        </span>
+    </div>
+
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
@@ -38,16 +47,5 @@
     </div>
 
     <!-- /END THE FEATURETTES -->
-
-    <hr>
-
-    <div>
-        <p ng-hide="users.length === 0">Contributors:</p>
-        <ul>
-            <li ng-repeat="user in users">
-                <p>{{user.name}}</p>
-            </li>
-        </ul>
-    </div>
 
 </div><!-- /container -->

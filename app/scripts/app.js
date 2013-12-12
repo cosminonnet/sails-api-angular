@@ -13,7 +13,8 @@ angular.module('sailsApiAngularApp', [
         controller: 'MainCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/about.html'
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
       })
       .when('/features', {
         templateUrl: 'views/features.html'
