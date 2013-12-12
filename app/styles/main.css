@@ -3,7 +3,7 @@ body {
 }
 
 .header-image {
-    background: url(/images/background.jpg);/* Use a tiling background image or a full width image - if you're using full width you will need to change no-repeat center center cover  */
+    background: url(/images/background.png);/* Use a tiling background image or a full width image - if you're using full width you will need to change no-repeat center center cover  */
     background-position: top;
     height: auto;
     display: block;
