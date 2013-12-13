@@ -4,28 +4,32 @@ angular.module('sailsApiAngularApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ui.router'
   ])
-  .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
+  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('index', {
+        url: "/index",
+        templateUrl: "views/main.html",
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
+      .state('about', {
+        url: "/about",
+        templateUrl: "views/about.html",
         controller: 'AboutCtrl'
       })
-      .when('/features', {
-        templateUrl: 'views/features.html'
+      .state('features', {
+        url: "/features",
+        templateUrl: "views/features.html"
       })
-      .when('/customers', {
-        templateUrl: 'views/customers.html'
+      .state('customers', {
+        url: "/customers",
+        templateUrl: "views/customers.html"
       })
-      .when('/pricing', {
-        templateUrl: 'views/pricing.html'
-      })
-      .otherwise({
-        redirectTo: '/'
+      .state('pricing', {
+        url: "/pricing",
+        templateUrl: "views/pricing.html"
       });
+
+    $urlRouterProvider.otherwise("/index");
   }]);

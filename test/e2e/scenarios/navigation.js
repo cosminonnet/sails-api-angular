@@ -3,14 +3,14 @@
 describe("Navigation: Index", function() {
     it('should redirect to the index page', function() {
         browser().navigateTo('/');
-        expect(browser().location().url()).toBe('/');
+        expect(browser().location().url()).toBe('/index');
     });
 });
 
 describe("Navigation: Unknown", function() {
     it('should redirect to the index page', function() {
         browser().navigateTo('/#/abcdefghij');
-        expect(browser().location().url()).toBe('/');
+        expect(browser().location().url()).toBe('/index');
     });
 });
 
