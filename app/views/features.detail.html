@@ -3,4 +3,5 @@
     <h4>{{feature.author}}</h4>
     <p>{{feature.description}}</p>
     <a class="btn btn-primary" ui-sref="features.list.edit({featureId:feature.id})">Edit</a>
+    <a class="btn btn-primary btn-danger" ng-click="delete(feature.id)">Delete</a>
 </section>

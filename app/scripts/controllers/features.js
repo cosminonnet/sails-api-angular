@@ -27,8 +27,8 @@ angular.module('sailsApiAngularApp')
             controller: 'FeatureSelectedCtrl'
         });
   }])
-  .controller('FeaturesCtrl', ['$scope', '$state', function ($scope, $state) {
-    $scope.features = [];
+  .controller('FeaturesCtrl', ['$scope', '$state', 'Feature', function ($scope, $state, Feature) {
+    $scope.features = Feature.query();
 
     $scope.deleteAllFeatures = function() {
       $scope.features = [];
@@ -36,18 +36,27 @@ angular.module('sailsApiAngularApp')
     };
 
     $scope.save = function() {
-      if (typeof this.feature.id == "undefined") {
-        $scope.features.push({
+      if (typeof this.feature.id === "undefined") {
+        new Feature({
           title: this.feature.title,
           author: this.feature.author,
-          description: this.feature.description,
-          id: $scope.features.length
+          description: this.feature.description
+        })
+        .$save(function(feature) {
+          $scope.features.push(feature);
         });
       }
       $state.go('features.list');
     };
 
+    $scope.delete = function(featureId) {
+        Feature.delete({id: featureId}, function() {
+            $scope.features = Feature.query();
+            $state.go('features.list');
+        });
+    };
+
   }])
-  .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
-    $scope.feature = $scope.features[$stateParams.featureId];
+  .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', 'Feature', function ($scope, $stateParams, Feature) {
+    $scope.feature = Feature.get({ id : $stateParams.featureId });
   }]);
