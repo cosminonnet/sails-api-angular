@@ -18,10 +18,6 @@ angular.module('sailsApiAngularApp', [
         templateUrl: "views/about.html",
         controller: 'AboutCtrl'
       })
-      .state('features', {
-        url: "/features",
-        templateUrl: "views/features.html"
-      })
       .state('customers', {
         url: "/customers",
         templateUrl: "views/customers.html"

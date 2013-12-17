@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-6">
+        <a class="btn btn-primary" ui-sref="features.create">Propose a new feature</a>
+        <a class="btn btn-primary btn-danger" ng-click="deleteAllFeatures()">Delete all features</a>
+    </div>
+</div>
+
+<hr ng-show="features.length > 0">
+
+<div ng-show="features.length > 0" class="row">
+
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="feature in features">
+                <a ui-sref="features.list.detail({featureId:feature.id})">{{feature.title}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8" ui-view=""></div>
+
+</div>

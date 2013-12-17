@@ -1,0 +1,29 @@
+<form class="form-horizontal" ng-submit="save()">
+    <div class="control-group">
+        <label class="control-label" for="title">Title</label>
+        <div class="controls">
+            <input type="text" ng-model="feature.title" size="60" id="title" placeholder="Give it a title" required>
+        </div>
+    </div>
+    <br>
+    <div class="control-group">
+        <label class="control-label" for="author">Author</label>
+        <div class="controls">
+            <input type="text" ng-model="feature.author" size="60" id="author" placeholder="Your name" required>
+        </div>
+    </div>
+    <br>
+    <div class="control-group">
+        <label class="control-label" for="description">Description</label>
+        <div class="controls">
+            <textarea ng-model="feature.description" id="description" cols="100" rows="5" placeholder="Briefly describe the feature"></textarea>
+        </div>
+    </div>
+    <br><br>
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" class="btn btn-primary" value="Save">
+            <input type="button" class="btn btn-primary btn-danger" ui-sref="features.list" value="Cancel">
+        </div>
+    </div>
+</form>
