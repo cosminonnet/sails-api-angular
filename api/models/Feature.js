@@ -1,5 +1,5 @@
 /**
- * User
+ * Feature
  *
  * @module      :: Model
  * @description :: A short summary of how this model works and what it represents.
@@ -10,12 +10,16 @@ module.exports = {
 
   attributes: {
 
-    name: {
+    title: {
       type: 'string',
       required: true
     },
 
-    email: {
+    author: {
+      type: 'string'
+    },
+
+    description: {
       type: 'string'
     }
     
