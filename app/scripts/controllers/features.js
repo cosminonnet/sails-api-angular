@@ -31,6 +31,9 @@ angular.module('sailsApiAngularApp')
     $scope.features = Feature.query();
 
     $scope.deleteAllFeatures = function() {
+      angular.forEach($scope.features, function(feature){
+        feature.$delete();
+      });
       $scope.features = [];
       $state.go('features.list');
     };
@@ -44,16 +47,21 @@ angular.module('sailsApiAngularApp')
         })
         .$save(function(feature) {
           $scope.features.push(feature);
+          $state.go('features.list');
         });
-      }
-      $state.go('features.list');
-    };
-
-    $scope.delete = function(featureId) {
-        Feature.delete({id: featureId}, function() {
+      } else {
+          this.feature.$update(function(/*feature*/) {
             $scope.features = Feature.query();
             $state.go('features.list');
-        });
+          });
+      }
+    };
+
+    $scope.delete = function() {
+      this.feature.$delete(function(/*feature*/) {
+        $scope.features = Feature.query();
+        $state.go('features.list');
+      });
     };
 
   }])
