@@ -61,6 +61,6 @@ angular.module('sailsApiAngularApp')
     };
 
   }])
-  .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', 'Feature', function ($scope, $stateParams, Feature) {
-    $scope.feature = Feature.get({ id : $stateParams.featureId });
+  .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+    $scope.feature = _.findWhere($scope.features, {id: parseInt($stateParams.featureId)});
   }]);
