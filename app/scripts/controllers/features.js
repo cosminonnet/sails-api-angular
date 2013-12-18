@@ -40,25 +40,21 @@ angular.module('sailsApiAngularApp')
 
     $scope.save = function() {
       if (typeof this.feature.id === "undefined") {
-        new Feature({
-          title: this.feature.title,
-          author: this.feature.author,
-          description: this.feature.description
-        })
+        new Feature(this.feature)
         .$save(function(feature) {
           $scope.features.push(feature);
           $state.go('features.list');
         });
       } else {
-          this.feature.$update(function(/*feature*/) {
-            $scope.features = Feature.query();
-            $state.go('features.list');
-          });
+        this.feature.$update(function(feature) {
+          $scope.features = Feature.query();
+          $state.transitionTo('features.list.detail', {featureId:feature.id});
+        });
       }
     };
 
     $scope.delete = function() {
-      this.feature.$delete(function(/*feature*/) {
+      this.feature.$delete(function() {
         $scope.features = Feature.query();
         $state.go('features.list');
       });
