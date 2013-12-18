@@ -37,7 +37,7 @@ module.exports.controllers = {
     // '/:controller/create'
     // '/:controller/update/:id'
     // '/:controller/destroy/:id'
-    shortcuts: true,
+    shortcuts: false,
 
 
     // Automatic REST blueprints enabled?
