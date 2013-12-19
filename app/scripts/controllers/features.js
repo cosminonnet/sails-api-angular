@@ -27,7 +27,7 @@ angular.module('sailsApiAngularApp')
             controller: 'FeatureSelectedCtrl'
         });
   }])
-  .controller('FeaturesCtrl', ['$scope', '$state', 'Feature', function ($scope, $state, Feature) {
+  .controller('FeaturesCtrl', ['$scope', '$state', '_', 'Feature', function ($scope, $state, _, Feature) {
     $scope.features = Feature.query();
 
     $scope.deleteAllFeatures = function() {
@@ -68,7 +68,7 @@ angular.module('sailsApiAngularApp')
     };
 
   }])
-  .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+  .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', '_', function ($scope, $stateParams, _) {
     // Feature.query() returns an array containing a promise, so in order to use the values in the array, the promise
     // must be resolved (and calling .then(<f>) on an already resolved promise immediately runs the function <f>).
     $scope.features.$promise.then(function() {

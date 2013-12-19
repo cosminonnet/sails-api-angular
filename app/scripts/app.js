@@ -4,7 +4,8 @@ angular.module('sailsApiAngularApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ui.router'
+    'ui.router',
+    'underscore'
   ])
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
