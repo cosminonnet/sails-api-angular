@@ -55,14 +55,7 @@ angular.module('sailsApiAngularApp')
 
     $scope.delete = function() {
       this.feature.$delete(function(feature) {
-        var n = $scope.features.length, item, i;
-        for (i=0; i<n; i++)  {
-            item = $scope.features[i];
-            if (item.id === feature.id) {
-                $scope.features.splice(i, 1);
-                break;
-            }
-        }
+        _.removeFirst($scope.features, {id: feature.id});
         $state.go('features.list');
       });
     };
