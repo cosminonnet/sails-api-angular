@@ -48,16 +48,14 @@ angular.module('sailsApiAngularApp')
       } else {
         this.feature.$update(function(feature) {
           $scope.features = Feature.query();
-          $state.transitionTo('features.list.detail', {featureId:feature.id});
+          $state.transitionTo('features.list.detail', {featureId: feature.id});
         });
       }
     };
 
     $scope.delete = function() {
       this.feature.$delete(function(feature) {
-        _.remove($scope.features, function(featureElement) {
-          return featureElement.id === feature.id;
-        });
+        _.remove($scope.features, {id: feature.id});
         $state.go('features.list');
       });
     };
