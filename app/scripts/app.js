@@ -5,7 +5,7 @@ angular.module('sailsApiAngularApp', [
     'ngResource',
     'ngSanitize',
     'ui.router',
-    'underscore'
+    'lodash'
   ])
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider

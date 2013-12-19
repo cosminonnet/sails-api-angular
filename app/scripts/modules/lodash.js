@@ -3,7 +3,7 @@
 
   'use strict';
 
-  angular.module('underscore', [])
+  angular.module('lodash', [])
     .factory('_', function() {
 
       // Assumes underscore has already been loaded on the page
