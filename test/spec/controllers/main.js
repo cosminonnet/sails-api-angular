@@ -9,9 +9,9 @@ describe('Controller: MainCtrl', function () {
   var MainCtrl,
       scope,
       httpBackend,
-      userData = [
-        { "name": "John", "id": 1 },
-        { "name": "Terry", "id": 2 }
+      featuresData = [
+        { "title": "Feature 1", "author": "John", "description": "", "id": 1 },
+        { "title": "Feature 2", "author": "Mike", "description": "", "id": 2 }
       ];
 
   // Initialize the controller and a mock scope
@@ -22,13 +22,13 @@ describe('Controller: MainCtrl', function () {
     });
 
     httpBackend = _$httpBackend_;
-    httpBackend.expectGET('/api/user').respond(userData);
+    httpBackend.expectGET('/api/feature').respond(featuresData);
   }));
 
   // Tests descriptions
-  it('should attach a list of users to the scope', function () {
+  it('should attach a list of features to the scope', function () {
     httpBackend.flush();
-    expect(scope.users.length).toBe(userData.length);
+    expect(scope.features.length).toBe(featuresData.length);
   });
 
 });

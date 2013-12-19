@@ -11,12 +11,12 @@
 
 <div class="container">
 
-    <div ng-show="users.length > 0">
+    <div ng-show="features.length > 0">
         <hr class="featurette-divider">
 
-        <b>Latest Users:</b>
-        <span ng-repeat="user in users">
-            {{user.name}}<span ng-if="$index < users.length - 1">,</span>
+        <b>Latest Features:</b>
+        <span ng-repeat="feature in features | orderBy:'-id' | limitTo:numberOfFeatures">
+            {{feature.title}}<span ng-if="$index < numberOfFeatures - 1">,</span>
         </span>
     </div>
 
