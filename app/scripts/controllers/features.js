@@ -31,10 +31,10 @@ angular.module('sailsApiAngularApp')
     $scope.features = Feature.query();
 
     $scope.deleteAllFeatures = function() {
-      angular.forEach($scope.features, function(feature){
+      _.each($scope.features, function(feature){
         feature.$delete();
       });
-      $scope.features = [];
+      $scope.features.length = 0; // Empty the <features> set, but keep the same array reference
       $state.go('features.list');
     };
 
@@ -54,13 +54,24 @@ angular.module('sailsApiAngularApp')
     };
 
     $scope.delete = function() {
-      this.feature.$delete(function() {
-        $scope.features = Feature.query();
+      this.feature.$delete(function(feature) {
+        var n = $scope.features.length, item, i;
+        for (i=0; i<n; i++)  {
+            item = $scope.features[i];
+            if (item.id === feature.id) {
+                $scope.features.splice(i, 1);
+                break;
+            }
+        }
         $state.go('features.list');
       });
     };
 
   }])
   .controller('FeatureSelectedCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
-    $scope.feature = _.findWhere($scope.features, {id: parseInt($stateParams.featureId)});
+    // Feature.query() returns an array containing a promise, so in order to use the values in the array, the promise
+    // must be resolved (and calling .then(<f>) on an already resolved promise immediately runs the function <f>).
+    $scope.features.$promise.then(function() {
+      $scope.feature = _.findWhere($scope.features, {id: parseInt($stateParams.featureId)});
+    });
   }]);
