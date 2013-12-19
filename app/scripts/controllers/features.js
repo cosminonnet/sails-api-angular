@@ -43,13 +43,11 @@ angular.module('sailsApiAngularApp')
         new Feature(this.feature)
             .$save(function(feature) {
               $scope.features.push(feature);
-              $state.go('features.list');
+              $state.transitionTo('features.list.detail', {featureId: feature.id});
             });
       } else {
-        this.feature.$update(function(feature) {
-          $scope.features = Feature.query();
-          $state.transitionTo('features.list.detail', {featureId: feature.id});
-        });
+        this.feature.$update();
+        $state.transitionTo('features.list.detail', {featureId: this.feature.id});
       }
     };
 
