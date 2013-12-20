@@ -22,7 +22,7 @@ describe('Controller: AboutCtrl', function () {
     });
 
     httpBackend = _$httpBackend_;
-    httpBackend.expectGET('/api/user').respond(userData);
+    httpBackend.whenGET('/api/user').respond(userData);
   }));
 
   // Tests descriptions

@@ -28,7 +28,7 @@ describe('Controller: MainCtrl', function () {
     });
 
     httpBackend = _$httpBackend_;
-    httpBackend.expectGET('/api/feature').respond(featuresData);
+    httpBackend.whenGET('/api/feature').respond(featuresData);
   }));
 
   // Tests descriptions
