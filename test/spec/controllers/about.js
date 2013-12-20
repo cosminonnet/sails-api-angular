@@ -2,7 +2,7 @@
 
 describe('Controller: AboutCtrl', function () {
 
-  // load the controller's module
+  // Load the controller's module
   beforeEach(module('sailsApiAngularApp'));
 
   // Define the variables
@@ -15,7 +15,7 @@ describe('Controller: AboutCtrl', function () {
       ];
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, _$httpBackend_) {
+  beforeEach(inject(function (_$httpBackend_, $rootScope, $controller) {
     scope = $rootScope.$new();
     AboutCtrl = $controller('AboutCtrl', {
       $scope: scope
