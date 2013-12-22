@@ -1,19 +1,20 @@
 'use strict';
 
 angular.module('sailsApiAngularApp')
-  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider) {
+  .config(['$stateProvider', function ($stateProvider) {
     $stateProvider
         .state('features', {
             abstract: true,
+            url: "/features",
             templateUrl: "views/features.html",
             controller: 'FeaturesCtrl'
         })
         .state('features.list', {
-            url: "/features",
+            url: "",
             templateUrl: "views/features.list.html"
         })
         .state('features.create', {
-            url: "/features/create",
+            url: "/create",
             views: {
               '': {
                 templateUrl: "views/features.edit.html"
