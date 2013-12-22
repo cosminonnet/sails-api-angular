@@ -18,13 +18,31 @@ angular.module('sailsApiAngularApp')
         })
         .state('features.list.detail', {
             url: '/view/{featureId:[0-9]{1,4}}',
-            templateUrl: "views/features.detail.html",
-            controller: 'FeatureSelectedCtrl'
+            views: {
+              '': {
+                templateUrl: 'views/features.detail.html',
+                controller: 'FeatureSelectedCtrl'
+              },
+              'selected@features': {
+                templateProvider: ['$stateParams',
+                  function ($stateParams) { return 'Viewing Feature ' + $stateParams.featureId; }
+                ]
+              }
+            }
         })
         .state('features.list.edit', {
             url: '/edit/{featureId:[0-9]{1,4}}',
-            templateUrl: "views/features.edit.html",
-            controller: 'FeatureSelectedCtrl'
+            views: {
+              '': {
+                templateUrl: "views/features.edit.html",
+                controller: 'FeatureSelectedCtrl'
+              },
+              'selected@features': {
+                templateProvider: ['$stateParams',
+                  function ($stateParams) { return 'Editing Feature ' + $stateParams.featureId; }
+                ]
+              }
+            }
         });
   }])
   .controller('FeaturesCtrl', ['$scope', '$state', '_', 'Feature', function ($scope, $state, _, Feature) {
