@@ -19,9 +19,7 @@ angular.module('sailsApiAngularApp')
                 templateUrl: "views/features.edit.html"
               },
               'message@features': {
-                templateProvider: [
-                  function () { return 'Proposing A New Feature '; }
-                ]
+                template: 'Proposing A New Feature '
               }
             }
         })
