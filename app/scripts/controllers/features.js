@@ -20,35 +20,31 @@ angular.module('sailsApiAngularApp')
                 templateUrl: "views/features.edit.html"
               },
               'message@features': {
-                template: 'Proposing A New Feature '
+                template: 'Proposing A New Feature'
               }
             }
         })
         .state('features.list.detail', {
-            url: '/view/{featureId:[0-9]{1,4}}',
+            url: '/view/{featureId:[a-fA-F0-9]{24}}',
             views: {
               '': {
                 templateUrl: 'views/features.detail.html',
                 controller: 'FeatureSelectedCtrl'
               },
               'message@features': {
-                templateProvider: ['$stateParams',
-                  function ($stateParams) { return 'Viewing Feature ' + $stateParams.featureId; }
-                ]
+                template: 'Viewing The Selected Feature'
               }
             }
         })
         .state('features.list.edit', {
-            url: '/edit/{featureId:[0-9]{1,4}}',
+            url: '/edit/{featureId:[a-fA-F0-9]{24}}',
             views: {
               '': {
                 templateUrl: "views/features.edit.html",
                 controller: 'FeatureSelectedCtrl'
               },
               'message@features': {
-                templateProvider: ['$stateParams',
-                  function ($stateParams) { return 'Editing Feature ' + $stateParams.featureId; }
-                ]
+                template: 'Editing The Selected Feature'
               }
             }
         });
@@ -89,6 +85,6 @@ angular.module('sailsApiAngularApp')
     // Feature.query() returns an array containing a promise, so in order to use the values in the array, the promise
     // must be resolved (and calling .then(<f>) on an already resolved promise immediately runs the function <f>).
     $scope.features.$promise.then(function() {
-      $scope.feature = _.findWhere($scope.features, {id: parseInt($stateParams.featureId)});
+      $scope.feature = _.findWhere($scope.features, {id: $stateParams.featureId});
     });
   }]);
