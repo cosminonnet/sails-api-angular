@@ -12,6 +12,7 @@
     <div class="col-md-4">
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="feature in features | orderBy:'-id'">
+                <span class="text-muted">[{{$index + 1}}]&nbsp;&nbsp;</span>
                 <a ui-sref="features.list.detail({featureId:feature.id})">{{feature.title}}</a>
             </li>
         </ul>
