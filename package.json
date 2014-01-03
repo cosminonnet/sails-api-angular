@@ -56,10 +56,10 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "node app.js",
-    "debug": "node debug app.js"
+    "start": "node server.js",
+    "debug": "node debug server.js"
   },
-  "main": "app.js",
+  "main": "server.js",
   "repository": "https://github.com/cosminonnet/sails-api-angular",
   "author": "Cosmin Molea",
   "license": ""
