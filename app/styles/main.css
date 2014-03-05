@@ -49,6 +49,18 @@ footer {
     margin: 50px 0;
 }
 
+/* DYNAMIC CSS */
+
+.breadcrumb.create-feature {
+    background-color: #f8efc0;
+}
+.breadcrumb.view-feature {
+    background-color: #eed3d7;
+}
+.breadcrumb.edit-feature {
+    background-color: #b2dba1;
+}
+
 /* RESPONSIVE CSS */
 
 @media (max-width: 1200px) {
