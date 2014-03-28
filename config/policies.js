@@ -16,7 +16,7 @@ module.exports.policies = {
 
   // Default policy for all controllers and actions
   // (`true` allows public access) 
-  '*': 'localhostAccessOnly'
+  '*': 'sameOrigin'
 
   /*
 	// Here's an example of adding some policies to a controller
